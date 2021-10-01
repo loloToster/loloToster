@@ -15,6 +15,7 @@ I am a young fellow who mostly program in python and javascript. I really enjoy 
 ![css](https://img.shields.io/badge/-CSS-1572B6?style=for-the-badge&logo=css3&logoColor=1572B6&labelColor=151515)
 ![javascript](https://img.shields.io/badge/-javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=F7DF1E&labelColor=151515)
 ![nodejs](https://img.shields.io/badge/-node.js-339933?style=for-the-badge&logo=node.js&logoColor=339933&labelColor=151515)
+![nodered](https://img.shields.io/badge/-node%20RED-8F0000?style=for-the-badge&logo=nodered&logoColor=8F0000&labelColor=151515)
 ![npm](https://img.shields.io/badge/-npm-CB3837?style=for-the-badge&logo=npm&logoColor=CB3837C&labelColor=151515)
 ![python](https://img.shields.io/badge/-python-3776AB?style=for-the-badge&logo=python&logoColor=3776AB&labelColor=151515)
 ![raspberrypi](https://img.shields.io/badge/-raspberry%20pi-A22846?style=for-the-badge&logo=raspberrypi&logoColor=A22846&labelColor=151515)
