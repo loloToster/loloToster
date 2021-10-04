@@ -3,7 +3,7 @@
 I am a young fellow who mostly program in python and javascript. I really enjoy programming and learning about overall IT stuff.
 
 ## 😃 About me:
-* ☁️ I'm currently working on `openweather-api-node☁️` npm package
+* ☁️ I'm currently working on [`openweather-api-node☁️`](https://github.com/loloToster/openweather-api-node) npm package
 * ‍🌱 I'm currently learning everything!
 * ⚡ I like computer graphics 🖥️ and electronics 💡
 
