@@ -3,8 +3,8 @@
 I am a young fellow who mostly program in python and javascript. I really enjoy programming and learning about overall IT stuff.
 
 ## 😃 About me:
-* ☁️ I'm currently working on school project (public soon)
-* ‍🌱 I'm currently learning Typescript
+* ☁️ I'm currently working on Tileio app
+* ‍🌱 I'm currently learning everything
 * ⚡ I like computer graphics 🖥️, electronics 💡 and of course programming 👨‍💻
 
 <br>
