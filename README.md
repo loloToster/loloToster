@@ -4,7 +4,7 @@ I am a young fellow who mostly program in python and javascript. I really enjoy 
 
 ## 😃 About me:
 * ☁️ I'm currently working on Tileio app
-* ‍🌱 I'm currently learning everything
+* ‍🌱 I'm currently learning React & SQL
 * ⚡ I like computer graphics 🖥️, electronics 💡 and of course programming 👨‍💻
 
 <br>
