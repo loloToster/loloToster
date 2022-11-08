@@ -1,6 +1,6 @@
 # 👋 Hi, I'm loloToster
 
-I am a young fellow who mostly program in python and javascript. I really enjoy programming and learning about overall IT stuff.
+I am a young fellow who mostly program in typescript and python. I really enjoy programming and learning about overall IT stuff.
 
 ## 😃 About me:
 * ☁️ I'm currently working on Nexum app
