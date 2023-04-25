@@ -3,7 +3,7 @@
 I am a young fellow who mostly program in typescript and python. I really enjoy programming and learning about overall IT stuff.
 
 ## 😃 About me:
-* ☁️ I'm currently working on [CAM](https://github.com/loloToster/cah.py/tree/v2)
+* ☁️ I'm currently working on [CAM](https://github.com/loloToster/CardsAgainstMorality)
 * ‍🌱 I'm currently learning Vue & Prisma
 * ⚡ I like computer graphics 🖥️, electronics 💡 and of course programming 👨‍💻
 
