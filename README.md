@@ -1,16 +1,17 @@
 # 👋 Hi, I'm loloToster
 
-I am a young fellow who mostly program in python and javascript. I really enjoy programming and learning about overall IT stuff.
+I am a young fellow who mostly program in typescript and python. I really enjoy programming and learning about overall IT stuff.
 
 ## 😃 About me:
-* ☁️ I'm currently working on Tileio app
-* ‍🌱 I'm currently learning React & SQL
+* ☁️ I'm currently working on [CAM](https://github.com/loloToster/CardsAgainstMorality)
+* ‍🌱 I'm currently learning Vue & Prisma
 * ⚡ I like computer graphics 🖥️, electronics 💡 and of course programming 👨‍💻
 
 <br>
 
 ## 🧰 Languages, Tools and Technologies:
 ![vscode](https://img.shields.io/badge/-VSCode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=007ACC&labelColor=151515)
+![react](https://img.shields.io/badge/-React-61DAFB?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=151515)
 ![html](https://img.shields.io/badge/-HTML-E34F26?style=for-the-badge&logo=html5&logoColor=E34F26&labelColor=151515)
 ![css](https://img.shields.io/badge/-CSS-1572B6?style=for-the-badge&logo=css3&logoColor=1572B6&labelColor=151515)
 ![sass](https://img.shields.io/badge/-SASS-CC6699?style=for-the-badge&logo=sass&logoColor=CC6699&labelColor=151515)
