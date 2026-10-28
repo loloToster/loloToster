@@ -1,0 +1,27 @@
+.landing {
+  display: flex;
+  padding: 0 23vw;
+  padding-bottom: 200vh;
+
+  &__img {
+    transform: translateY(-20%);
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 20vw;
+    height: 20vw;
+  }
+
+  &__desc {
+    z-index: -1;
+    padding: 24px;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+  }
+}

@@ -1,26 +1,13 @@
-import { StrictMode } from 'react'
 import { ViteReactSSG } from 'vite-react-ssg'
 import type { RouteRecord } from 'vite-react-ssg'
 import './index.scss'
+import Home from './Components/Home/Home.tsx'
 
-import App from './App.tsx'
-
+// TODO: add strict mode back
 export const routes: RouteRecord[] = [
   {
     path: '/',
-    element: (
-      <StrictMode>
-        <App />
-      </StrictMode>
-    ),
-  },
-  {
-    path: '/test',
-    element: (
-      <StrictMode>
-        <App />
-      </StrictMode>
-    ),
+    element: <Home />
   }
 ]
 

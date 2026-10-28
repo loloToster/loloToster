@@ -1,0 +1,18 @@
+.home {
+  .header {
+    margin-top: 30vh;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.header {
+  display: flex;
+  border-bottom: 1px gray solid;
+  padding: 16px 23vw;
+  align-items: center;
+  justify-content: end;
+  gap: 28px;
+  font-size: 1.2rem;
+  background-color: black;
+}
