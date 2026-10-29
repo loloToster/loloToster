@@ -1,0 +1,186 @@
+{
+  "cat1": [
+    {
+      "name": "Python",
+      "themeColor": "#3B82F6"
+    },
+    {
+      "name": "JavaScript",
+      "themeColor": "#F59E0B"
+    },
+    {
+      "name": "TypeScript",
+      "themeColor": "#2563EB"
+    },
+    {
+      "name": "MatLAB",
+      "themeColor": "#EA580C"
+    },
+    {
+      "name": "C++",
+      "themeColor": "#0284C7"
+    },
+    {
+      "name": "PHP",
+      "themeColor": "#8B5CF6"
+    },
+    {
+      "name": "SQL",
+      "themeColor": "#0D9488"
+    },
+    {
+      "name": "HTML",
+      "themeColor": "#EF4444"
+    },
+    {
+      "name": "CSS",
+      "themeColor": "#3B82F6"
+    },
+    {
+      "name": "Vue",
+      "themeColor": "#10B981"
+    },
+    {
+      "name": "React",
+      "themeColor": "#06B6D4"
+    },
+    {
+      "name": "SASS",
+      "themeColor": "#DB2777"
+    },
+    {
+      "name": "React Native",
+      "themeColor": "#0891B2"
+    },
+    {
+      "name": "EJS",
+      "themeColor": "#84CC16"
+    },
+    {
+      "name": "Vite",
+      "themeColor": "#7C3AED"
+    }
+  ],
+  "cat2": [
+    {
+      "name": "Node.js",
+      "themeColor": "#22C55E"
+    },
+    {
+      "name": "Express",
+      "themeColor": "#EC4899"
+    },
+    {
+      "name": "PostgreSQL",
+      "themeColor": "#3B82F6"
+    },
+    {
+      "name": "NestJS",
+      "themeColor": "#E11D48"
+    },
+    {
+      "name": "REST",
+      "themeColor": "#14B8A6"
+    },
+    {
+      "name": "MongoDB",
+      "themeColor": "#10B981"
+    },
+    {
+      "name": "SQLite",
+      "themeColor": "#0EA5E9"
+    },
+    {
+      "name": "Prisma",
+      "themeColor": "#4F46E5"
+    },
+    {
+      "name": "DevOps",
+      "themeColor": "#F97316"
+    },
+    {
+      "name": "Docker",
+      "themeColor": "#0284C7"
+    },
+    {
+      "name": "npm",
+      "themeColor": "#EF4444"
+    },
+    {
+      "name": "Server and Component Management",
+      "themeColor": "#8B5CF6"
+    },
+    {
+      "name": "Linux",
+      "themeColor": "#EAB308"
+    },
+    {
+      "name": "DigitalOcean",
+      "themeColor": "#2563EB"
+    },
+    {
+      "name": "Git",
+      "themeColor": "#EA580C"
+    },
+    {
+      "name": "Heroku",
+      "themeColor": "#9333EA"
+    }
+  ],
+  "cat3": [
+    {
+      "name": "Custom IoT",
+      "themeColor": "#06B6D4"
+    },
+    {
+      "name": "Raspberry Pi",
+      "themeColor": "#E11D48"
+    },
+    {
+      "name": "Arduino",
+      "themeColor": "#0D9488"
+    },
+    {
+      "name": "Microcontrollers",
+      "themeColor": "#8B5CF6"
+    },
+    {
+      "name": "ESP",
+      "themeColor": "#F97316"
+    },
+    {
+      "name": "TwinCAT",
+      "themeColor": "#3B82F6"
+    },
+    {
+      "name": "Node-Red",
+      "themeColor": "#BE123C"
+    }
+  ],
+  "cat4": [
+    {
+      "name": "3D Printing",
+      "themeColor": "#EC4899"
+    },
+    {
+      "name": "AutoCAD",
+      "themeColor": "#0284C7"
+    },
+    {
+      "name": "Fusion360",
+      "themeColor": "#F97316"
+    },
+    {
+      "name": "Mechatronics Design",
+      "themeColor": "#10B981"
+    },
+    {
+      "name": "SolidWorks",
+      "themeColor": "#EF4444"
+    },
+    {
+      "name": "VSCode",
+      "themeColor": "#2563EB"
+    }
+  ]
+}
