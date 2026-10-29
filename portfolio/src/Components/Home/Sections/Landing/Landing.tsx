@@ -1,6 +1,6 @@
-import loloTosterImage from "@assets/lolotoster.png"
-import leonImage from "@assets/leon.jpg"
-import { useTheme } from "../../../../Contexts/theme"
+import loloTosterImage from "@/assets/lolotoster.png"
+import leonImage from "@/assets/leon.jpg"
+import { useTheme } from "@/Contexts/theme"
 import "./landing.scss"
 
 function Landing() {

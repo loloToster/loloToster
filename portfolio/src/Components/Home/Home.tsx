@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom"
 import Switch from "react-switch";
+import { useGlitch } from 'react-powerglitch'
 import Landing from "./Sections/Landing/Landing"
-import { useTheme } from "../../Contexts/theme";
+import { useTheme } from "@/Contexts/theme";
 import "./home.scss"
 
 function Home() {
   const { dark, setDark } = useTheme()
+  const glitch = useGlitch({ playMode: "hover", slice: { hueRotate: true }, optimizeSeo: true });
 
   return <div className="home">
     <header className="header">
-      <Link to="/">Home</Link>
+      <Link ref={glitch.ref} to="/">Home</Link>
       <Link to="/projects">Projects</Link>
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>
