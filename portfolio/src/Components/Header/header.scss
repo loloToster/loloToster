@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  height: 64px;
+  border-bottom: 1px var(--border-default) solid;
+  padding: 0 23vw;
+  align-items: center;
+  justify-content: end;
+  gap: 20px;
+  font-size: 1.2rem;
+  background-color: var(--bg-primary);
+  transition-property: color, background-color;
+  transition-duration: 100ms;
+
+  a {
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background-color 200ms;
+  }
+}
+
+.light-theme .header a:hover {
+  background-color: var(--accent-gray-light);
+  text-decoration: underline;
+}

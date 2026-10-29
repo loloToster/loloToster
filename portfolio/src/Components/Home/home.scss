@@ -5,25 +5,3 @@
     top: 0;
   }
 }
-
-.header {
-  display: flex;
-  height: 64px;
-  border-bottom: 1px var(--border-default) solid;
-  padding: 0 23vw;
-  align-items: center;
-  justify-content: end;
-  gap: 20px;
-  font-size: 1.2rem;
-  background-color: var(--bg-primary);
-
-  a {
-    padding: 6px 8px;
-    border-radius: 4px;
-    transition: background-color 200ms;
-
-    &:hover {
-      background-color: var(--accent-gray-light);
-    }
-  }
-}
