@@ -1,11 +1,11 @@
 .landing {
   display: flex;
   padding: 0 23vw;
-  padding-bottom: 200vh;
+  height: calc(70vh - 64px);
 
   &__img {
     transform: translateY(-20%);
-    border: 1px solid gray;
+    border: 1px var(--border-default) solid;
     border-radius: 50%;
     width: 20vw;
     height: 20vw;
