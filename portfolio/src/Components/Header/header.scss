@@ -10,6 +10,7 @@
   background-color: var(--bg-primary);
   transition-property: color, background-color;
   transition-duration: 100ms;
+  z-index: 1;
 
   a {
     padding: 6px 8px;
