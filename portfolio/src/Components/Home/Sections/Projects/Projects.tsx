@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom"
 import SectionHeading from "@/Components/SectionHeading/SectionHeading"
 import nexumImage from "@/assets/nexum.png"
 import camImage from "@/assets/cam.png"
 import owjsImage from "@/assets/owjs.png"
 import "./projects.scss"
+import ActionBtn from "@/Components/ActionBtn/ActionBtn"
 
 function Projects() {
   return <div className="projects">
@@ -28,7 +28,7 @@ function Projects() {
     </div>
 
     <div className="projects__more">
-      <Link to="/projects">View all →</Link>
+      <ActionBtn to="/projects">View all →</ActionBtn>
     </div>
   </div>
 }
