@@ -12,8 +12,9 @@
     .preview {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
       flex-direction: column;
+      align-self: stretch;
       width: 20vw;
       gap: 16px;
       border: 1px solid var(--border-default);

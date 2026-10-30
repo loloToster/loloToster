@@ -107,7 +107,7 @@
       "themeColor": "#EF4444"
     },
     {
-      "name": "Server and Component Management",
+      "name": "Server Management",
       "themeColor": "#8B5CF6"
     },
     {
@@ -125,6 +125,14 @@
     {
       "name": "Heroku",
       "themeColor": "#9333EA"
+    },
+    {
+      "name": "Redis",
+      "themeColor": "#DC2626"
+    },
+    {
+      "name": "NGINX",
+      "themeColor": "#059669"
     }
   ],
   "cat3": [
@@ -155,6 +163,10 @@
     {
       "name": "Node-Red",
       "themeColor": "#BE123C"
+    },
+    {
+      "name": "MQTT",
+      "themeColor": "#22C55E"
     }
   ],
   "cat4": [

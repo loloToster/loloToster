@@ -7,7 +7,7 @@ import "./projects.scss"
 
 function Projects() {
   return <div className="projects">
-    <SectionHeading text="My projects" />
+    <SectionHeading text="Featured projects" />
 
     <div className="projects__previews">
       <div className="preview">
@@ -28,7 +28,7 @@ function Projects() {
     </div>
 
     <div className="projects__more">
-      <Link to="/projects">More →</Link>
+      <Link to="/projects">View all →</Link>
     </div>
   </div>
 }
