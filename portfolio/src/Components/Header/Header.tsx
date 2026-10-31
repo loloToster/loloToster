@@ -1,18 +1,11 @@
-import { useEffect } from "react";
+import "./header.scss"
 import { Link } from "react-router-dom"
 import Switch from "react-switch";
-import { useGlitch } from 'react-powerglitch'
 import { useTheme } from "@/Contexts/theme";
-import "./header.scss"
+import { useThemedGlitch } from "@/Hooks/useThemedGlitch";
 
 function HeaderLink({ to, name }: { to: string, name: string }) {
-  const { dark } = useTheme()
-  const glitch = useGlitch({ playMode: "hover", slice: { hueRotate: true }, optimizeSeo: true });
-
-  useEffect(() => {
-    glitch.setOptions({ playMode: dark ? "hover" : "manual" });
-  }, [dark])
-
+  const glitch = useThemedGlitch({ playMode: "hover" })
   return <Link ref={glitch.ref} to={to}>{name}</Link>
 }
 

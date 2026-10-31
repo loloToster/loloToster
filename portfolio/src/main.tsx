@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 
 import { ThemeContextProvider } from './Contexts/theme.tsx'
 
-import Home from './Components/Home/Home.tsx'
+import Home from './Components/pages/Home/Home.tsx'
 
 import './index.scss'
 

@@ -5,7 +5,7 @@
 
   &__previews {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     gap: 16px;
 
@@ -20,6 +20,7 @@
       border: 1px solid var(--border-default);
       border-radius: 12px;
       padding: 24px;
+      cursor: pointer;
 
       img {
         width: 12vw;
