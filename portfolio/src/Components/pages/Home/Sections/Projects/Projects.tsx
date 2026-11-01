@@ -1,10 +1,14 @@
 import "./projects.scss"
+
+import { motion } from "framer-motion"
+
+import { useThemedGlitch } from "@/Hooks/useThemedGlitch"
 import SectionHeading from "@/Components/SectionHeading/SectionHeading"
+import ActionBtn from "@/Components/ActionBtn/ActionBtn"
+
 import nexumImage from "@/assets/nexum.png"
 import camImage from "@/assets/cam.png"
 import owjsImage from "@/assets/owjs.png"
-import ActionBtn from "@/Components/ActionBtn/ActionBtn"
-import { useThemedGlitch } from "@/Hooks/useThemedGlitch"
 
 interface PreviewI {
   img: string,
@@ -34,11 +38,19 @@ function Preview({ img, name, description }: PreviewI) {
   // todo: fix card height
   const glitch = useThemedGlitch({ playMode: "hover" })
 
-  return <div ref={glitch.ref} className="preview">
-    <img src={img} alt={name + " Logo"} />
-    <h2>{name}</h2>
-    <p>{description}</p>
-  </div>
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      ref={glitch.ref}
+      className="preview">
+      <img src={img} alt={name + " Logo"} />
+      <h2>{name}</h2>
+      <p>{description}</p>
+    </motion.div>
+  )
 }
 
 function Projects() {
