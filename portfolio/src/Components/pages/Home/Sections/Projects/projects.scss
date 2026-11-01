@@ -10,22 +10,53 @@
     gap: 16px;
 
     .preview {
+      $base-width: 19vw;
+
+      height: 53vh;
       display: flex;
       align-items: center;
       justify-content: start;
       flex-direction: column;
-      align-self: stretch;
-      width: 20vw;
+      width: $base-width;
       gap: 16px;
       border: 1px solid var(--border-default);
       border-radius: 12px;
       padding: 24px;
       cursor: pointer;
+      transition: all 200ms;
+
+      &:hover {
+        background-color: var(--bg-secondary);
+      }
+
+      &.light:hover {
+        padding-right: 32px;
+        padding-left: 32px;
+        width: calc($base-width + 16px);
+      }
 
       img {
         width: 12vw;
         height: 12vw;
         object-fit: contain;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        flex-grow: 1;
+      }
+
+      a {
+        align-self: end;
+        font-weight: 500;
+        color: var(--accent-blue);
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
