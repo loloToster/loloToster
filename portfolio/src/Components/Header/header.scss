@@ -12,6 +12,22 @@
   transition-duration: 100ms;
   z-index: 1;
 
+  &__logo {
+    opacity: 0;
+    font-family: monospace;
+    font-size: 1.75rem;
+    margin-right: auto;
+    transition: all 100ms;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    &.light {
+      color: var(--accent-blue);
+    }
+  }
+
   a {
     padding: 6px 8px;
     border-radius: 4px;

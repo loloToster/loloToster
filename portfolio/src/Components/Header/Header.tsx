@@ -9,11 +9,15 @@ function HeaderLink({ to, name }: { to: string, name: string }) {
   return <Link ref={glitch.ref} to={to}>{name}</Link>
 }
 
-function Header() {
+function Header({ logoVisible = true }: { logoVisible?: boolean }) {
   const { dark, setDark } = useTheme()
 
   return (
     <header className="header">
+      <div
+        className={"header__logo" + (logoVisible ? " visible" : "") + (dark ? "" : " light")}>
+        {dark ? "loloToster" : "Leon M."}
+      </div>
       <HeaderLink to="/" name="Home" />
       <HeaderLink to="/projects" name="Projects" />
       <HeaderLink to="/about" name="About" />
