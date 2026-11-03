@@ -8,7 +8,7 @@ function Cloud({ idx, title, time, description, left }: { idx: number, title: st
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ delay: idx == 2 ? 0.3 : 0, duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`timeline__cloud ${left ? "timeline__cloud--left" : ""} timeline__cloud--${idx}`}>
       <h2>{title}</h2>
       <span>{time}</span>

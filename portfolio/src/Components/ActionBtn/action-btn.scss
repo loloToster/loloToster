@@ -10,4 +10,10 @@
     transform: translateY(-2px);
     border-bottom: 2px solid var(--border-default);
   }
+
+  svg {
+    fill: white;
+    width: 1.35rem;
+    height: 1.35rem;
+  }
 }
