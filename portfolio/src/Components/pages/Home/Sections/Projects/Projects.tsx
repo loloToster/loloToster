@@ -31,7 +31,7 @@ const projects: PreviewI[] = [
     DynamicDescription: (
       () => {
         const { data } = useQuery({
-          queryKey: [],
+          queryKey: ["cam", "meta"],
           queryFn: () => fetch('https://cam.lolotoster.com/api/meta')
             .then(res => res.ok ? res.json() : Promise.reject(new Error('Fetch failed')))
         });
@@ -65,7 +65,7 @@ const projects: PreviewI[] = [
     DynamicDescription: (
       () => {
         const { data } = useQuery({
-          queryKey: [],
+          queryKey: ["npm", "openweather-api-node"],
           queryFn: () => fetch('https://api.npmjs.org/downloads/point/2000-01-01:3000-01-01/openweather-api-node')
             .then(res => res.ok ? res.json() : Promise.reject(new Error('Fetch failed')))
         });
