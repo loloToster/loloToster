@@ -9,9 +9,9 @@ import { useThemedGlitch } from "@/Hooks/useThemedGlitch"
 import SectionHeading from "@/Components/SectionHeading/SectionHeading"
 import ActionBtn from "@/Components/ActionBtn/ActionBtn"
 
-import nexumImage from "@/assets/nexum.png"
-import camImage from "@/assets/cam.png"
-import owjsImage from "@/assets/owjs.png"
+import nexumImage from "@/assets/logos/nexum.png"
+import camImage from "@/assets/logos/cam.png"
+import owjsImage from "@/assets/logos/owjs.png"
 
 interface PreviewI {
   img: string,
