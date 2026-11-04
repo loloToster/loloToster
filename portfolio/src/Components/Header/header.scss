@@ -28,14 +28,14 @@
     }
   }
 
-  a {
+  &__btn {
     padding: 6px 8px;
     border-radius: 4px;
     transition: background-color 200ms;
   }
 }
 
-.light-theme .header a:hover {
+.light-theme .header .header__btn:hover {
   background-color: var(--accent-gray-light);
   text-decoration: underline;
 }

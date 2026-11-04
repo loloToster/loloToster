@@ -2,7 +2,6 @@ import "./home.scss"
 
 import { useIsVisible } from "@/Hooks/useIsVisible";
 import Header from "@/Components/Header/Header";
-import Footer from "@/Components/Footer/Footer";
 
 import Landing from "./Sections/Landing/Landing"
 import Projects from "./Sections/Projects/Projects";
@@ -24,7 +23,6 @@ function Home() {
       <Skills />
       <Timeline />
       <Contact />
-      <Footer />
     </div>
   )
 }

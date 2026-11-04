@@ -6,7 +6,7 @@ import { useThemedGlitch } from "@/Hooks/useThemedGlitch";
 
 function HeaderLink({ to, name }: { to: string, name: string }) {
   const glitch = useThemedGlitch({ playMode: "hover" })
-  return <Link ref={glitch.ref} to={to}>{name}</Link>
+  return <Link className="header__btn" ref={glitch.ref} to={to}>{name}</Link>
 }
 
 function Header({ logoVisible = true }: { logoVisible?: boolean }) {
@@ -14,11 +14,10 @@ function Header({ logoVisible = true }: { logoVisible?: boolean }) {
 
   return (
     <header className="header">
-      <div
-        className={"header__logo" + (logoVisible ? " visible" : "") + (dark ? "" : " light")}>
+      <Link
+        to="/" className={"header__logo" + (logoVisible ? " visible" : "") + (dark ? "" : " light")}>
         {dark ? "loloToster" : "Leon M."}
-      </div>
-      <HeaderLink to="/" name="Home" />
+      </Link>
       <HeaderLink to="/projects" name="Projects" />
       <HeaderLink to="/about" name="About" />
       <HeaderLink to="/contact" name="Contact" />
