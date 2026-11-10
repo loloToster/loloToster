@@ -1,6 +1,6 @@
-import SectionHeading from "@/Components/SectionHeading/SectionHeading"
-import skillsData from "./skills.json"
 import "./skills.scss"
+import SectionHeading from "@/Components/SectionHeading/SectionHeading"
+import skillsData from "@/assets/skills.json"
 
 function SkillsMarquee({ skills, right }: { skills: ({ name: string, themeColor: string })[], right?: boolean }) {
   return (
@@ -9,7 +9,7 @@ function SkillsMarquee({ skills, right }: { skills: ({ name: string, themeColor:
         {[skills, skills].map((skills, i) => (
           <div key={i}>
             {skills.map((skill, j) => (
-              <div style={{ color: skill.themeColor }} key={j}>{skill.name}</div>
+              <div style={{ "--color": skill.themeColor } as React.CSSProperties} key={j}>{skill.name}</div>
             ))}
           </div>
         ))}
@@ -20,7 +20,7 @@ function SkillsMarquee({ skills, right }: { skills: ({ name: string, themeColor:
 
 function Skills() {
   return <div className="skills">
-    <SectionHeading text="Skills" />
+    <SectionHeading text={"Cut my teeth on"} />
     <SkillsMarquee skills={skillsData.cat1} />
     <SkillsMarquee skills={skillsData.cat2} right />
     <SkillsMarquee skills={skillsData.cat3} />

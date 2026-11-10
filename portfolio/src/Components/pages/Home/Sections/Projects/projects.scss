@@ -9,10 +9,15 @@
     justify-content: center;
     gap: 16px;
 
+    // all previews the same height, problem with animation libraries
+    & > div > div,
+    & > div > div > div {
+      height: 100%;
+    }
+
     .preview {
       $base-width: 19vw;
 
-      height: 53vh;
       display: flex;
       align-items: center;
       justify-content: start;
