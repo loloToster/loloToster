@@ -1,6 +1,7 @@
 import "./home.scss"
 
 import { useEffect, useState } from "react";
+import Goo from "@lafleche/gooey-react";
 
 import { useTheme } from "@/Contexts/theme";
 import { useIsVisible } from "@/Hooks/useIsVisible";
@@ -81,6 +82,28 @@ function Home() {
     return () => clearInterval(intervalId);
   }, [dark]);
 
+  const blobs = [
+    { pos: [70, 50], size: 4, color: 3 },
+    { pos: [35, 50], size: 8, color: 2 },
+    { pos: [25, 80], size: 12, color: 1 },
+    { pos: [10, 20], size: 10, color: 4 },
+    { pos: [5, 65], size: 5, color: 2 },
+    { pos: [49, 30], size: 9, color: 1 },
+    { pos: [55, 58], size: 5, color: 4 },
+    { pos: [85, 20], size: 14, color: 2 },
+    { pos: [92, 45], size: 7, color: 4 },
+    { pos: [75, 85], size: 9, color: 3 },
+    { pos: [82, 75], size: 6, color: 1 }
+  ];
+
+  const BLOB_COLORS = [
+    "#1d4ed8",
+    "#2563eb",
+    "#2862ae",
+    "#3073c5",
+    "#25759a"
+  ];
+
   return (
     <div className="home">
       {dark ?
@@ -101,8 +124,19 @@ function Home() {
             ))}
           </div>
         ) : (
-          <div className="banner bubbles">
-          </div>
+          <Goo composite className="banner bubbles">
+            <svg>
+              {blobs.map((blob, i) => (
+                <circle
+                  cx={`${blob.pos[0]}%`}
+                  cy={`${blob.pos[1]}%`}
+                  r={`${blob.size}%`}
+                  fill={BLOB_COLORS[blob.color]}
+                  key={i}
+                />
+              ))}
+            </svg>
+          </Goo>
         )
       }
       <Header logoVisible={!isInView} stickyBg />
