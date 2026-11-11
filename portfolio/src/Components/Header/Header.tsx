@@ -3,17 +3,19 @@ import { Link } from "react-router-dom"
 import Switch from "react-switch";
 import { useTheme } from "@/Contexts/theme";
 import { useThemedGlitch } from "@/Hooks/useThemedGlitch";
+import { useSticky } from "@/Hooks/useSticky";
 
 function HeaderLink({ to, name, target }: { to: string, name: string, target?: string }) {
   const glitch = useThemedGlitch({ playMode: "hover" })
   return <Link className="header__btn" ref={glitch.ref} to={to} target={target}>{name}</Link>
 }
 
-function Header({ logoVisible = true }: { logoVisible?: boolean }) {
+function Header({ logoVisible = true, stickyBg = false }: { logoVisible?: boolean, stickyBg?: boolean }) {
   const { dark, setDark } = useTheme()
+  const { ref, isSticky } = useSticky()
 
   return (
-    <header className="header">
+    <header ref={ref} className={"header" + ((!stickyBg || isSticky) ? " bg-active" : "")}>
       <Link
         to="/" className={"header__logo" + (logoVisible ? " visible" : "") + (dark ? "" : " light")}>
         {dark ? "loloToster" : "Leon M."}

@@ -1,7 +1,27 @@
 .home {
   .header {
-    margin-top: 30vh;
     position: sticky;
     top: 0;
+  }
+
+  .banner {
+    height: calc(30vh + 64px);
+  }
+
+  .matrix {
+    user-select: none;
+    position: relative;
+    font-family: mc-etable;
+    overflow: hidden;
+    font-size: 0.7vw;
+    line-height: 1.2;
+
+    &__col {
+      position: absolute;
+      top: -1vw;
+      left: calc(var(--pos) * 1ch);
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

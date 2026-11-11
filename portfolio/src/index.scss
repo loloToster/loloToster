@@ -209,6 +209,14 @@ summary {
   display: list-item;
 }
 
+@font-face {
+  font-family: "mc-etable";
+  src: url("./assets/mc-etable.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   background-color: transparent;
   border: none;

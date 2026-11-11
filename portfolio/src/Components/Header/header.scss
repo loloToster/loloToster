@@ -9,10 +9,14 @@
   justify-content: end;
   gap: 20px;
   font-size: 1.2rem;
-  background-color: var(--bg-primary);
   transition-property: color, background-color;
   transition-duration: 100ms;
   z-index: 1;
+  margin-top: -64px;
+
+  &.bg-active {
+    background-color: var(--bg-primary);
+  }
 
   &__logo {
     opacity: 0;
@@ -34,6 +38,8 @@
     padding: 6px 8px;
     border-radius: 4px;
     transition: background-color 200ms;
+    background-color: var(--bg-primary);
+    border-radius: 4px;
   }
 }
 
