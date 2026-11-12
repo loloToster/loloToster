@@ -4,6 +4,7 @@ import type { RouteRecord } from 'vite-react-ssg'
 import App from '@/App'
 import Home from '@/Components/pages/Home/Home.tsx'
 import ProjectsPage from '@/Components/pages/Projects/ProjectsPage.tsx'
+import NotFound from '@/Components/pages/NotFound/NotFound'
 
 export const routes: RouteRecord[] = [
   {
@@ -17,6 +18,10 @@ export const routes: RouteRecord[] = [
       {
         path: "/projects",
         element: <ProjectsPage />
+      },
+      {
+        path: "*",
+        element: <NotFound />
       }
     ]
   }
