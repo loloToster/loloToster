@@ -1,0 +1,181 @@
+@use "sass:list";
+
+$item-width: 6px;
+$dot-radius: 30%;
+$color1: #10b981;
+$color2: #f59e0b;
+$color3: #0ea5e9;
+$color4: #ef4444;
+
+.timeline {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 10vmin);
+    grid-template-rows: repeat(8, 10vmin);
+    width: fit-content;
+    margin: 32px auto;
+
+    &__item {
+      position: relative;
+
+      &--dot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .inner {
+          width: $dot-radius;
+          height: $dot-radius;
+          border-radius: 50%;
+          border: var(--color) solid $item-width;
+          background-color: var(--bg-primary);
+        }
+      }
+
+      &--dot-line {
+        .inner:after {
+          content: "";
+          z-index: -1;
+          position: absolute;
+          bottom: 0;
+          left: calc(50% - $item-width/2);
+          width: $item-width;
+          height: 50%;
+          background-color: var(--color);
+        }
+      }
+
+      &--dot-line-up {
+        .inner:after {
+          top: 0;
+          bottom: unset;
+        }
+      }
+
+      &--line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .inner {
+          background-color: var(--color);
+          width: $item-width;
+          height: 100%;
+        }
+      }
+
+      &:nth-child(1) {
+        --color: #{$color1};
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+
+      &:nth-child(2) {
+        --color: #{$color1};
+        grid-column: 1 / 2;
+        grid-row: 2 / 8;
+      }
+
+      &:nth-child(3) {
+        --color: #{$color1};
+        grid-column: 1 / 2;
+        grid-row: 8 / 9;
+      }
+
+      &:nth-child(4) {
+        --color: #{$color2};
+        grid-column: 2 / 3;
+        grid-row: 5 / 6;
+      }
+
+      &:nth-child(5) {
+        --color: #{$color2};
+        grid-column: 2 / 3;
+        grid-row: 6 / 8;
+      }
+
+      &:nth-child(6) {
+        --color: #{$color2};
+        grid-column: 2 / 3;
+        grid-row: 8 / 9;
+      }
+
+      &:nth-child(7) {
+        --color: #{$color3};
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+      }
+
+      &:nth-child(8) {
+        --color: #{$color3};
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+      }
+
+      &:nth-child(9) {
+        --color: #{$color4};
+        grid-column: 4 / 5;
+        grid-row: 7 / 8;
+      }
+    }
+  }
+
+  &__cloud {
+    $arrow-size: 10px;
+
+    position: absolute;
+    margin: auto;
+    width: 30vw;
+    max-width: 400px;
+    padding: 10px 16px;
+    border: solid 1px var(--border-default);
+    border-radius: 12px;
+    left: calc(100% - $arrow-size * 1.2);
+    top: calc(50% - $arrow-size * 3);
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: -0.6 * $arrow-size;
+      border: inherit;
+      border-width: 0 0 1px 1px;
+      width: $arrow-size;
+      height: $arrow-size;
+      transform: rotate(45deg);
+      background-color: var(--bg-primary);
+    }
+
+    &--left {
+      left: unset;
+      right: calc(100% - $arrow-size * 1.2);
+
+      &::after {
+        border-width: 1px 1px 0 0;
+        left: unset;
+        right: -0.6 * $arrow-size;
+      }
+    }
+
+    $colors: $color1, $color2, $color3, $color4;
+
+    @for $i from 1 through list.length($colors) {
+      $c: list.nth($colors, $i);
+
+      &--#{$i} {
+        --color: #{$c};
+      }
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      color: var(--color);
+    }
+
+    span {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+  }
+}

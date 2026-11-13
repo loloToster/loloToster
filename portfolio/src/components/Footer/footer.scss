@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  height: 48px;
+  border-top: 1px var(--border-default) solid;
+  padding: 0 23vw;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  transition-property: color, background-color;
+  transition-duration: 100ms;
+
+  span {
+    font-style: italic;
+  }
+}

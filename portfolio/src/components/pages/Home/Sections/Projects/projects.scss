@@ -1,0 +1,79 @@
+.projects {
+  & > * {
+    margin-bottom: 32px;
+  }
+
+  &__previews {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 16px;
+
+    // all previews the same height, problem with animation libraries
+    & > div > div,
+    & > div > div > div {
+      height: 100%;
+    }
+
+    .preview {
+      $base-width: 19vw;
+
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      flex-direction: column;
+      width: $base-width;
+      gap: 16px;
+      border: 1px solid var(--border-default);
+      border-radius: 12px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all 200ms;
+
+      &:hover {
+        background-color: var(--bg-secondary);
+      }
+
+      &.light:hover {
+        padding-right: 32px;
+        padding-left: 32px;
+        width: calc($base-width + 16px);
+      }
+
+      img {
+        width: 12vw;
+        height: 12vw;
+        object-fit: contain;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      p {
+        flex-grow: 1;
+
+        span {
+          font-weight: bold;
+          color: var(--accent-blue-subtle);
+        }
+      }
+
+      a {
+        align-self: end;
+        font-weight: 500;
+        color: var(--accent-blue);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+  }
+}

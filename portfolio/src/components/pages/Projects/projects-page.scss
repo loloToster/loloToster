@@ -1,0 +1,49 @@
+@use "sass:math";
+
+.projects-page {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 60vw;
+  margin: 32px auto;
+  gap: 16px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px var(--border-default);
+    border-radius: 12px;
+    padding: 24px;
+    height: 40vh;
+
+    &--large {
+      grid-column: span 2;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+
+      img {
+        height: 2.25rem;
+        vertical-align: middle;
+      }
+    }
+
+    p {
+      flex-grow: 1;
+    }
+
+    &__skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    &__skill {
+      text-wrap: nowrap;
+      padding: 2px 4px;
+      border-radius: 4px;
+      color: var(--color);
+      border: solid 1px var(--color);
+    }
+  }
+}
