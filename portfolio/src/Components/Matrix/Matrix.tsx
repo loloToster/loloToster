@@ -1,7 +1,8 @@
 import "./matrix.scss"
-import { useEffect, useState } from "react"
 
-// TODO: optimize number of columns and rows
+import { useEffect, useRef, useState } from "react"
+import mergeRefs from "@/utils/mergeRefs"
+import { useIsVisible } from "@/Hooks/useIsVisible"
 
 interface Col {
   position: number
@@ -11,22 +12,22 @@ interface Col {
 
 const ANIMATION_LEN = 10
 
-const generateLetters = () => {
-  return Array.from({ length: 60 }, () => {
+const generateLetters = (length: number) => {
+  return Array.from({ length }, () => {
     const randomCharCode = Math.floor(Math.random() * 26) + 65
     return String.fromCharCode(randomCharCode)
   })
 }
 
-function Matrix({ paused }: { paused?: boolean }) {
+function Matrix() {
   const [cols, setCols] = useState<Col[]>([])
 
-  const addRandomCol = () => {
+  const addRandomCol = (posRange: number, height: number) => {
     setCols(prev => {
       const usedPositions = prev.map(col => col.position)
 
       const availablePositions: number[] = []
-      for (let i = 0; i <= 140; i++) {
+      for (let i = 0; i <= posRange; i++) {
         if (!usedPositions.includes(i)) {
           availablePositions.push(i)
         }
@@ -40,18 +41,35 @@ function Matrix({ paused }: { paused?: boolean }) {
         ...prev,
         {
           position: availablePositions[randomIndex],
-          letters: generateLetters(),
+          letters: generateLetters(height),
           currentAnimationPos: 0,
         },
       ]
     })
   }
 
+  const containerRef = useRef<HTMLDivElement>(null)
+  const testletterRef = useRef<HTMLDivElement>(null)
+  const [targetRef, isInView] = useIsVisible({ threshold: 0 })
+
   useEffect(() => {
     const intervalId = setInterval(() => {
-      if (paused) return
+      if (!isInView) return
 
-      addRandomCol()
+      const container = containerRef.current?.getBoundingClientRect() || {
+        width: 0,
+        height: 0,
+      }
+
+      const testletter = testletterRef.current?.getBoundingClientRect() || {
+        width: 0,
+        height: 0,
+      }
+
+      addRandomCol(
+        Math.floor(container.width / testletter.width + 5),
+        Math.floor(container.height / testletter.height + 5)
+      )
 
       setCols(prev => {
         return prev
@@ -70,10 +88,16 @@ function Matrix({ paused }: { paused?: boolean }) {
     }, 100)
 
     return () => clearInterval(intervalId)
-  }, [paused])
+  }, [isInView])
 
   return (
-    <div className="matrix">
+    <div className="matrix" ref={mergeRefs(containerRef, targetRef)}>
+      <div
+        style={{ "--pos": 0, opacity: 0 } as React.CSSProperties}
+        className="matrix__col"
+      >
+        <div ref={testletterRef}>A</div>
+      </div>
       {cols.map((col, i) => (
         <div
           key={i}
