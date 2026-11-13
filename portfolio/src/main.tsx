@@ -1,14 +1,13 @@
-import { ViteReactSSG } from 'vite-react-ssg'
-import type { RouteRecord } from 'vite-react-ssg'
+import { ViteReactSSG, type RouteRecord } from "vite-react-ssg"
 
-import App from '@/App'
-import Home from '@/Components/pages/Home/Home.tsx'
-import ProjectsPage from '@/Components/pages/Projects/ProjectsPage.tsx'
-import NotFound from '@/Components/pages/NotFound/NotFound'
+import App from "@/App"
+import Home from "@/Components/pages/Home/Home.tsx"
+import ProjectsPage from "@/Components/pages/Projects/ProjectsPage.tsx"
+import NotFound from "@/Components/pages/NotFound/NotFound"
 
 export const routes: RouteRecord[] = [
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
@@ -17,14 +16,14 @@ export const routes: RouteRecord[] = [
       },
       {
         path: "/projects",
-        element: <ProjectsPage />
+        element: <ProjectsPage />,
       },
       {
         path: "*",
-        element: <NotFound />
-      }
-    ]
-  }
+        element: <NotFound />,
+      },
+    ],
+  },
 ]
 
 export const createRoot = ViteReactSSG({ routes })

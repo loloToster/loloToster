@@ -1,21 +1,21 @@
 import "./home.scss"
 
-import { useTheme } from "@/Contexts/theme";
-import { useIsVisible } from "@/Hooks/useIsVisible";
-import Header from "@/Components/Header/Header";
-import Matrix from "@/Components/Matrix/Matrix";
-import Blobs, { type BlobI } from "@/Components/Blobs/Blobs";
+import { useTheme } from "@/Contexts/theme/useTheme"
+import { useIsVisible } from "@/Hooks/useIsVisible"
+import Header from "@/Components/Header/Header"
+import Matrix from "@/Components/Matrix/Matrix"
+import Blobs, { type BlobI } from "@/Components/Blobs/Blobs"
 
 import Landing from "./Sections/Landing/Landing"
-import Projects from "./Sections/Projects/Projects";
-import Skills from "./Sections/Skills/Skills";
-import Timeline from "./Sections/Timeline/Timeline";
-import Contact from "./Sections/Contact/Contact";
+import Projects from "./Sections/Projects/Projects"
+import Skills from "./Sections/Skills/Skills"
+import Timeline from "./Sections/Timeline/Timeline"
+import Contact from "./Sections/Contact/Contact"
 
 function Home() {
   const { dark } = useTheme()
 
-  const [targetRef, isInView] = useIsVisible({ threshold: 0.3 });
+  const [targetRef, isInView] = useIsVisible({ threshold: 0.3 })
 
   const blobs: BlobI[] = [
     { pos: [70, 50], size: 4, color: 3 },
@@ -28,8 +28,8 @@ function Home() {
     { pos: [85, 20], size: 14, color: 2 },
     { pos: [92, 45], size: 7, color: 4 },
     { pos: [75, 85], size: 9, color: 3 },
-    { pos: [82, 75], size: 6, color: 1 }
-  ];
+    { pos: [82, 75], size: 6, color: 1 },
+  ]
 
   return (
     <div className="home">

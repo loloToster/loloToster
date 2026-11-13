@@ -2,18 +2,12 @@ import "./blobs.scss"
 import Goo from "@lafleche/gooey-react"
 
 export interface BlobI {
-  pos: [number, number];
-  size: number;
-  color: number;
+  pos: [number, number]
+  size: number
+  color: number
 }
 
-const BLOB_COLORS = [
-  "#1d4ed8",
-  "#2563eb",
-  "#2862ae",
-  "#3073c5",
-  "#25759a"
-];
+const BLOB_COLORS = ["#1d4ed8", "#2563eb", "#2862ae", "#3073c5", "#25759a"]
 
 function Blobs({ blobs }: { blobs: BlobI[] }) {
   return (

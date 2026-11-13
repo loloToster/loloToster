@@ -1,24 +1,24 @@
-import './index.scss'
+import "./index.scss"
 
-import { StrictMode } from 'react'
-import { Outlet, useLocation } from 'react-router-dom'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { StrictMode } from "react"
+import { Outlet, useLocation } from "react-router-dom"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 
-import { ThemeContextProvider } from '@/Contexts/theme.tsx'
+import { ThemeContextProvider } from "@/Contexts/theme/ThemeProvider"
 
-import Header from "@/Components/Header/Header";
-import Footer from '@/Components/Footer/Footer.tsx'
+import Header from "@/Components/Header/Header"
+import Footer from "@/Components/Footer/Footer"
 
 const queryClient = new QueryClient()
 
 function App() {
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <StrictMode>
       <QueryClientProvider client={queryClient}>
         <ThemeContextProvider>
-          {location.pathname !== '/' && <Header />}
+          {location.pathname !== "/" && <Header />}
           <Outlet />
           <Footer />
         </ThemeContextProvider>

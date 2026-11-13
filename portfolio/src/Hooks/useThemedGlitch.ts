@@ -1,15 +1,24 @@
-import { useEffect } from 'react';
-import { useGlitch } from 'react-powerglitch';
-import { useTheme } from '@/Contexts/theme';
+import { useEffect } from "react"
+import { useGlitch } from "react-powerglitch"
+import { useTheme } from "@/Contexts/theme/useTheme"
 
-export const useThemedGlitch: typeof useGlitch = (userOptions) => {
-  const { dark } = useTheme();
-  
-  const glitch = useGlitch(userOptions);
+export const useThemedGlitch: typeof useGlitch = userOptions => {
+  const { dark } = useTheme()
+  const glitch = useGlitch(userOptions)
+  const { setOptions } = glitch
+
+  const serializedOptions = JSON.stringify(userOptions)
 
   useEffect(() => {
-    glitch.setOptions({ ...userOptions, playMode: dark ? userOptions?.playMode : "manual" });
-  }, [dark]); 
+    const parsedOptions = serializedOptions
+      ? JSON.parse(serializedOptions)
+      : undefined
 
-  return glitch;
-};
+    setOptions({
+      ...parsedOptions,
+      playMode: dark ? parsedOptions?.playMode : "manual",
+    })
+  }, [dark, serializedOptions, setOptions])
+
+  return glitch
+}

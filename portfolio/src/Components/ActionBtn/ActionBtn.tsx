@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom"
 import "./action-btn.scss"
+import { Link } from "react-router-dom"
 
 function ActionBtn({
   children,
   to,
-  target
+  target,
 }: {
-  children: React.ReactNode,
-  to: string,
+  children: React.ReactNode
+  to: string
   target?: React.HTMLAttributeAnchorTarget | undefined
 }) {
   return (
