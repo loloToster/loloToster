@@ -10,6 +10,8 @@ export const ThemeContext = createContext<ThemeContextI>({
   setDark: () => null,
 })
 
+export const ThemeContextConsumer = ThemeContext.Consumer
+
 export const useTheme = () => {
   return useContext(ThemeContext)
 }
