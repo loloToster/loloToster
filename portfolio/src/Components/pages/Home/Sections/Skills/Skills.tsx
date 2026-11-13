@@ -1,6 +1,6 @@
 import "./skills.scss"
 import skillsData from "@/assets/skills.json"
-import SectionHeading from "@/Components/SectionHeading/SectionHeading"
+import SectionHeading from "@/components/SectionHeading/SectionHeading"
 
 function SkillsMarquee({
   skills,

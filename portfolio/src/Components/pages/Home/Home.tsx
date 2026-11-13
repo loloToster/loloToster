@@ -1,10 +1,10 @@
 import "./home.scss"
 
-import { useTheme } from "@/Contexts/theme/useTheme"
-import { useIsVisible } from "@/Hooks/useIsVisible"
-import Header from "@/Components/Header/Header"
-import Matrix from "@/Components/Matrix/Matrix"
-import Blobs, { type BlobI } from "@/Components/Blobs/Blobs"
+import { useTheme } from "@/contexts/theme/useTheme"
+import { useIsVisible } from "@/hooks/useIsVisible"
+import Header from "@/components/Header/Header"
+import Matrix from "@/components/Matrix/Matrix"
+import Blobs, { type BlobI } from "@/components/Blobs/Blobs"
 
 import Landing from "./Sections/Landing/Landing"
 import Projects from "./Sections/Projects/Projects"

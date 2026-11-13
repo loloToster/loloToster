@@ -1,6 +1,6 @@
 import "./contact.scss"
-import SectionHeading from "@/Components/SectionHeading/SectionHeading"
-import ActionBtn from "@/Components/ActionBtn/ActionBtn"
+import SectionHeading from "@/components/SectionHeading/SectionHeading"
+import ActionBtn from "@/components/ActionBtn/ActionBtn"
 
 function Contact() {
   return (

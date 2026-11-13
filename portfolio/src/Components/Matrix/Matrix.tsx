@@ -2,7 +2,7 @@ import "./matrix.scss"
 
 import { useEffect, useRef, useState } from "react"
 import mergeRefs from "@/utils/mergeRefs"
-import { useIsVisible } from "@/Hooks/useIsVisible"
+import { useIsVisible } from "@/hooks/useIsVisible"
 
 interface Col {
   position: number

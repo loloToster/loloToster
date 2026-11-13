@@ -1,11 +1,11 @@
 import "./not-found.scss"
 
-import { useThemedGlitch } from "@/Hooks/useThemedGlitch"
-import { useTheme } from "@/Contexts/theme/useTheme"
+import { useThemedGlitch } from "@/hooks/useThemedGlitch"
+import { useTheme } from "@/contexts/theme/useTheme"
 
-import ActionBtn from "@/Components/ActionBtn/ActionBtn"
-import Matrix from "@/Components/Matrix/Matrix"
-import Blobs, { type BlobI } from "@/Components/Blobs/Blobs"
+import ActionBtn from "@/components/ActionBtn/ActionBtn"
+import Matrix from "@/components/Matrix/Matrix"
+import Blobs, { type BlobI } from "@/components/Blobs/Blobs"
 
 function NotFound() {
   const { dark } = useTheme()

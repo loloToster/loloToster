@@ -1,5 +1,5 @@
 import "./footer.scss"
-import { useTheme } from "@/Contexts/theme/useTheme"
+import { useTheme } from "@/contexts/theme/useTheme"
 
 function Footer() {
   const { dark } = useTheme()

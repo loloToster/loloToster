@@ -1,6 +1,6 @@
 import "./timeline.scss"
 import { motion } from "framer-motion"
-import SectionHeading from "@/Components/SectionHeading/SectionHeading"
+import SectionHeading from "@/components/SectionHeading/SectionHeading"
 
 function Cloud({
   idx,

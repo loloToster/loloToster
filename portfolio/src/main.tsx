@@ -1,9 +1,9 @@
 import { ViteReactSSG, type RouteRecord } from "vite-react-ssg"
 
 import App from "@/App"
-import Home from "@/Components/pages/Home/Home.tsx"
-import ProjectsPage from "@/Components/pages/Projects/ProjectsPage.tsx"
-import NotFound from "@/Components/pages/NotFound/NotFound"
+import Home from "@/components/pages/Home/Home"
+import ProjectsPage from "@/components/pages/Projects/ProjectsPage"
+import NotFound from "@/components/pages/NotFound/NotFound"
 
 export const routes: RouteRecord[] = [
   {

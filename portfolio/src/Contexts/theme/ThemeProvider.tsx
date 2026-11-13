@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { ThemeContext } from "./useTheme"
 
-export const ThemeContextProvider = (props: { children: React.ReactNode }) => {
+function ThemeContextProvider(props: { children: React.ReactNode }) {
   const [dark, setDark] = useState(
     location.hostname === "localhost" || location.hostname === "lolotoster.com"
   )
@@ -24,3 +24,5 @@ export const ThemeContextProvider = (props: { children: React.ReactNode }) => {
     </ThemeContext.Provider>
   )
 }
+
+export default ThemeContextProvider

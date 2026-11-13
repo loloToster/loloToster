@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useGlitch } from "react-powerglitch"
-import { useTheme } from "@/Contexts/theme/useTheme"
+import { useTheme } from "@/contexts/theme/useTheme"
 
 export const useThemedGlitch: typeof useGlitch = userOptions => {
   const { dark } = useTheme()

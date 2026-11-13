@@ -3,9 +3,9 @@ import "./header.scss"
 import { Link } from "react-router-dom"
 import Switch from "react-switch"
 
-import { useTheme } from "@/Contexts/theme/useTheme"
-import { useThemedGlitch } from "@/Hooks/useThemedGlitch"
-import { useSticky } from "@/Hooks/useSticky"
+import { useTheme } from "@/contexts/theme/useTheme"
+import { useThemedGlitch } from "@/hooks/useThemedGlitch"
+import { useSticky } from "@/hooks/useSticky"
 
 function HeaderLink({
   to,
