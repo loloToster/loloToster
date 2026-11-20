@@ -1,3 +1,5 @@
+@use "@/styles/breakpoints.scss" as bp;
+
 .skills {
   margin-bottom: 32px;
 
@@ -8,6 +10,16 @@
     overflow: hidden;
     height: 4.3rem;
     display: flex;
+
+    @include bp.screen-down("lg") {
+      font-size: 3rem;
+      height: 3.9rem;
+    }
+
+    @include bp.screen-down("md") {
+      font-size: 2rem;
+      height: 3.3rem;
+    }
 
     @keyframes marquee-left {
       to {
@@ -41,6 +53,10 @@
           color: color-mix(in srgb, var(--color) 50%, rgb(220, 215, 215));
           font-weight: 300;
           padding-right: 1.1rem;
+
+          @include bp.screen-down("md") {
+            padding-right: 0.7rem;
+          }
         }
       }
     }
