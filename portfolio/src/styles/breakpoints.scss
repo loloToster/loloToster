@@ -1,0 +1,61 @@
+@use "sass:map";
+
+$breakpoints: (
+  "xs": 480px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+@mixin screen-up($size) {
+  @if map.has-key($breakpoints, $size) {
+    @media (min-width: map.get($breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint `#{$size}` in $breakpoints.";
+  }
+}
+
+@mixin screen-down($size) {
+  @if map.has-key($breakpoints, $size) {
+    $max: map.get($breakpoints, $size) - 0.02px;
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint `#{$size}` in $breakpoints.";
+  }
+}
+
+@mixin screen-between($min-size, $max-size) {
+  @if map.has-key($breakpoints, $min-size) and
+    map.has-key($breakpoints, $max-size)
+  {
+    $min: map.get($breakpoints, $min-size);
+    $max: map.get($breakpoints, $max-size) - 0.02px;
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint `#{$min-size}` or `#{$max-size}` in $breakpoints.";
+  }
+}
+
+@mixin screen-custom($min: null, $max: null) {
+  @if $min and $max {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  }
+}

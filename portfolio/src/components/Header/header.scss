@@ -1,17 +1,27 @@
+@use "@/styles/breakpoints.scss" as bp;
+
 .header {
   position: sticky;
   top: 0;
-  display: flex;
+  width: 100%;
   height: 64px;
-  border-bottom: 1px var(--border-default) solid;
-  padding: 0 23vw;
+  display: flex;
   align-items: center;
-  justify-content: end;
-  gap: 20px;
-  font-size: 1.2rem;
+  justify-content: center;
+  border-bottom: 1px var(--border-default) solid;
   transition-property: color, background-color;
   transition-duration: 100ms;
   z-index: 1;
+
+  &__inner {
+    display: flex;
+    max-width: 860px;
+    width: 90vw;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    font-size: 1.2rem;
+  }
 
   &.bg-active {
     background-color: var(--bg-primary);
@@ -31,6 +41,10 @@
     &.light {
       color: var(--accent-blue);
     }
+
+    @include bp.screen-down("md") {
+      font-size: 1.2rem;
+    }
   }
 
   &__btn {
@@ -39,10 +53,103 @@
     transition: background-color 200ms;
     background-color: var(--bg-primary);
     border-radius: 4px;
+
+    @include bp.screen-down("lg") {
+      display: none;
+    }
+  }
+
+  &__burger {
+    height: 32px;
+    width: 32px;
+
+    background-color: var(--bg-primary);
+
+    @include bp.screen-up("lg") {
+      display: none;
+    }
+  }
+
+  svg {
+    fill: currentColor;
+  }
+
+  &__menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    background-color: transparent;
+    pointer-events: none;
+    transition: all 200ms;
+
+    &__inner {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      padding: 24px;
+      background-color: var(--bg-primary);
+      transform: translateX(100%);
+      transition: all 200ms;
+    }
+
+    &.open {
+      pointer-events: all;
+      background-color: color-mix(
+        in srgb,
+        var(--bg-secondary) 80%,
+        transparent
+      );
+
+      & .header__menu__inner {
+        transform: translateX(0);
+      }
+    }
+
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+
+    &__close {
+      height: 32px;
+      width: 32px;
+
+      svg {
+        height: 100%;
+        width: 100%;
+        fill: currentColor;
+      }
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      min-width: 60vw;
+
+      a {
+        font-size: 1.2rem;
+        text-align: end;
+        width: 100%;
+        padding: 12px;
+        border-bottom: solid 2px var(--border-default);
+      }
+    }
   }
 }
 
 .light-theme .header .header__btn:hover {
   background-color: var(--accent-gray-light);
   text-decoration: underline;
+}
+
+.light-theme .header svg {
+  fill: black;
 }
