@@ -1,11 +1,27 @@
+@use "@/styles/breakpoints" as bp;
+
 .landing {
   display: flex;
   padding: 0 23vw;
   height: calc(70vh - 64px);
 
+  @include bp.screen-down("md") {
+    padding: 0 5vw;
+    flex-direction: column;
+  }
+
   &__img {
     position: relative;
     z-index: 2;
+
+    @include bp.screen-down("md") {
+      margin: 0 24px;
+      height: 15vw;
+    }
+
+    @include bp.screen-down("sm") {
+      height: 3vh;
+    }
 
     img {
       transform: translateY(-20%);
@@ -14,6 +30,15 @@
       width: 20vw;
       height: 20vw;
       transition: opacity 200ms;
+
+      @include bp.screen-down("md") {
+        transform: unset;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30vw;
+        height: 30vw;
+      }
     }
 
     img:nth-child(2) {
@@ -21,6 +46,10 @@
       top: 0;
       left: 0;
       opacity: 0;
+
+      @include bp.screen-down("md") {
+        top: unset;
+      }
     }
 
     &.dark {
@@ -44,6 +73,10 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 8px;
+
+      @include bp.screen-down("md") {
+        font-size: 2rem;
+      }
     }
 
     p {
