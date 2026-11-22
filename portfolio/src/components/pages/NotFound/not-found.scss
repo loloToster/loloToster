@@ -1,3 +1,5 @@
+@use "@/styles/breakpoints.scss" as bp;
+
 .not-found {
   position: relative;
   height: calc(100vh - 64px - 48px);
@@ -5,8 +7,8 @@
   &__content {
     position: absolute;
     top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
+    left: 10%;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -14,13 +16,31 @@
     background-color: var(--bg-primary);
     border-radius: 32px;
 
+    @include bp.screen-down("xl") {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      align-items: center;
+      text-align: center;
+      border: 1px var(--border-default) solid;
+      width: 80vw;
+      max-width: 600px;
+    }
+
     h1 {
-      font-size: 160px;
+      font-size: 17vh;
+
+      @include bp.screen-down("lg") {
+        font-size: 12vh;
+      }
     }
 
     p {
       font-size: 1.5rem;
       color: var(--text-secondary);
+
+      @include bp.screen-down("lg") {
+        font-size: 1.2rem;
+      }
     }
   }
 }
