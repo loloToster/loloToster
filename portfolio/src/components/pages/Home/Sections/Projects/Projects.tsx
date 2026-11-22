@@ -1,5 +1,6 @@
 import "./projects.scss"
 
+import { useCallback, useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
@@ -12,6 +13,8 @@ import ActionBtn from "@/components/ActionBtn/ActionBtn"
 import nexumImage from "@/assets/logos/nexum.png"
 import camImage from "@/assets/logos/cam.png"
 import owjsImage from "@/assets/logos/owjs.png"
+
+const DOTS_DURATION = 10000
 
 interface PreviewI {
   img: string
@@ -112,9 +115,20 @@ function Preview({
   description,
   DynamicDescription,
   link,
-}: PreviewI) {
+  type,
+  className,
+}: PreviewI & {
+  type: "wide" | "thin"
+  className?: string
+}) {
   const { dark } = useTheme()
-  const { ref: glitchRef } = useThemedGlitch({ playMode: "hover" })
+  const { ref: glitchRef, startGlitch } = useThemedGlitch({
+    playMode: type === "wide" ? "hover" : "manual",
+  })
+
+  useEffect(() => {
+    startGlitch()
+  }, [name, startGlitch])
 
   return (
     <motion.div
@@ -122,8 +136,12 @@ function Preview({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
+      className={className}
     >
-      <div className={"preview" + (dark ? "" : " light")} ref={glitchRef}>
+      <div
+        className={`preview preview--${type}` + (dark ? "" : " light")}
+        ref={glitchRef}
+      >
         <img src={img} alt={name + " Logo"} />
         <h2>{name}</h2>
         {description && <p>{description}</p>}
@@ -143,14 +161,98 @@ function Preview({
 }
 
 function Projects() {
+  const { dark } = useTheme()
+  const [thinCounter, setThinCounter] = useState(1)
+  const intervalRef = useRef<number>(0)
+
+  const startTimer = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current)
+    }
+
+    intervalRef.current = setInterval(() => {
+      setThinCounter(prev => (prev + 1) % projects.length)
+    }, DOTS_DURATION)
+  }, [])
+
+  useEffect(() => {
+    startTimer()
+    return () => clearInterval(intervalRef.current)
+  }, [startTimer])
+
+  const slide = (step: number) => {
+    setThinCounter(prev => {
+      const idx = (prev + step) % projects.length
+      return idx < 0 ? projects.length - 1 : idx
+    })
+
+    startTimer()
+  }
+
   return (
     <div className="projects">
       <SectionHeading text="Featured projects" />
 
-      <div className="projects__previews">
+      <div className="projects__previews projects__previews--wide">
         {projects.map((project, i) => (
-          <Preview {...project} key={i} />
+          <Preview {...project} type="wide" key={i} />
         ))}
+      </div>
+
+      <div className="projects__previews projects__previews--thin">
+        <div className="projects__previews__slider-wrapper">
+          <button
+            onClick={() => slide(-1)}
+            className="projects__previews__slider-wrapper__arrow projects__previews__slider-wrapper__arrow--left"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8.03,22L6.25,20.23L14.48,12L6.25,3.77L8.03,2l10,10l-10,10Z" />
+            </svg>
+          </button>
+          <button
+            onClick={() => slide(1)}
+            className="projects__previews__slider-wrapper__arrow"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8.03,22L6.25,20.23L14.48,12L6.25,3.77L8.03,2l10,10l-10,10Z" />
+            </svg>
+          </button>
+          <div className="projects__previews__slider">
+            <div
+              style={
+                {
+                  "--idx": thinCounter,
+                  opacity: dark ? 0 : 1,
+                } as React.CSSProperties
+              }
+              className="projects__previews__slider__inner"
+            >
+              {projects.map((project, i) => (
+                <Preview {...project} type="thin" key={i} />
+              ))}
+            </div>
+            {dark && (
+              <Preview
+                type="thin"
+                className="preview--glitched"
+                {...projects[thinCounter]}
+              />
+            )}
+          </div>
+        </div>
+        <div
+          className="projects__dots"
+          style={{ "--dur": DOTS_DURATION } as React.CSSProperties}
+        >
+          {projects.map((_, i) => (
+            <div
+              className={
+                "projects__dots__dot" + (i === thinCounter ? " active" : "")
+              }
+              key={i}
+            ></div>
+          ))}
+        </div>
       </div>
 
       <div className="projects__more">

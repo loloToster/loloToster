@@ -1,3 +1,5 @@
+@use "@/styles/breakpoints.scss" as bp;
+
 .projects {
   & > * {
     margin-bottom: 32px;
@@ -9,6 +11,63 @@
     justify-content: center;
     gap: 16px;
 
+    &--wide {
+      @include bp.screen-down("xl") {
+        display: none;
+      }
+    }
+
+    &--thin {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+
+      @include bp.screen-down("xl") {
+        display: flex;
+      }
+    }
+
+    &__slider-wrapper {
+      position: relative;
+
+      &__arrow {
+        $gap: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% + $gap);
+        position: absolute;
+        height: 15vw;
+        width: 24px;
+
+        &--left {
+          left: calc(-24px - $gap);
+          transform: translateY(-50%) rotate(180deg);
+        }
+
+        svg {
+          fill: var(--border-strong);
+        }
+      }
+    }
+
+    &__slider {
+      position: relative;
+      min-width: 40vw;
+      width: 400px;
+      max-width: 80vw;
+      overflow: hidden;
+
+      &__inner {
+        $gap: 16px;
+        display: flex;
+        gap: $gap;
+        transition: transform 200ms;
+        transform: translateX(
+          calc((var(--idx) * 100% + var(--idx) * $gap) * -1)
+        );
+      }
+    }
+
     // all previews the same height, problem with animation libraries
     & > div > div,
     & > div > div > div {
@@ -16,13 +75,13 @@
     }
 
     .preview {
-      $base-width: 19vw;
+      $wide-base-width: 19vw;
 
       display: flex;
       align-items: center;
       justify-content: start;
       flex-direction: column;
-      width: $base-width;
+      width: $wide-base-width;
       gap: 16px;
       border: 1px solid var(--border-default);
       border-radius: 12px;
@@ -30,19 +89,35 @@
       cursor: pointer;
       transition: all 200ms;
 
+      @include bp.screen-down("xl") {
+        min-width: 40vw;
+        width: 400px;
+        max-width: 80vw;
+      }
+
       &:hover {
         background-color: var(--bg-secondary);
       }
 
-      &.light:hover {
-        padding-right: 32px;
-        padding-left: 32px;
-        width: calc($base-width + 16px);
+      @include bp.screen-up("xl") {
+        &.light:hover {
+          padding-right: 32px;
+          padding-left: 32px;
+          width: calc($wide-base-width + 16px);
+        }
+      }
+
+      &--glitched {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       img {
-        width: 12vw;
-        height: 12vw;
+        width: 12vmax;
+        min-width: 164px;
+        height: 12vmax;
+        min-height: 164px;
         object-fit: contain;
       }
 
@@ -66,6 +141,50 @@
 
         &:hover {
           text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__dots {
+    $size: 8px;
+
+    display: flex;
+    gap: $size * 0.75;
+    height: $size;
+
+    &__dot {
+      background-color: var(--accent-gray-light);
+      border-radius: 100vmax;
+      height: $size;
+      width: $size;
+      transition: width 200ms;
+      position: relative;
+      overflow: hidden;
+
+      &.active {
+        width: $size * 6;
+
+        @keyframes dot-width {
+          from {
+            width: 0;
+          }
+
+          to {
+            width: 100%;
+          }
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          background-color: var(--accent-gray);
+          animation: dot-width linear;
+          animation-duration: calc(var(--dur) * 1ms);
         }
       }
     }
