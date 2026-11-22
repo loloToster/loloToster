@@ -117,9 +117,11 @@ function Preview({
   link,
   type,
   className,
+  animate = true,
 }: PreviewI & {
   type: "wide" | "thin"
   className?: string
+  animate?: boolean
 }) {
   const { dark } = useTheme()
   const { ref: glitchRef, startGlitch } = useThemedGlitch({
@@ -132,10 +134,10 @@ function Preview({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      initial={animate ? { opacity: 0, y: 50 } : undefined}
+      whileInView={animate ? { opacity: 1, y: 0 } : undefined}
+      viewport={animate ? { once: true, amount: 0.3 } : undefined}
+      transition={animate ? { duration: 0.6, ease: "easeOut" } : undefined}
       className={className}
     >
       <div
@@ -228,14 +230,14 @@ function Projects() {
               className="projects__previews__slider__inner"
             >
               {projects.map((project, i) => (
-                <Preview {...project} type="thin" key={i} />
+                <Preview {...project} type="thin" animate={false} key={i} />
               ))}
             </div>
             {dark && (
               <Preview
+                {...projects[thinCounter]}
                 type="thin"
                 className="preview--glitched"
-                {...projects[thinCounter]}
               />
             )}
           </div>

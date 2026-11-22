@@ -39,6 +39,10 @@ function Header({
   return (
     <>
       <div className={"header__menu" + (menuOpen ? " open" : "")}>
+        <div
+          onClick={() => setMenuOpen(false)}
+          className="header__menu__close-area"
+        ></div>
         <div className="header__menu__inner">
           <div className="header__menu__top">
             <div>{dark ? "loloToster" : "Leon M."}</div>

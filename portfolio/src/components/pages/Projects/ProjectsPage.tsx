@@ -1,14 +1,6 @@
 import "./projects-page.scss"
 
 import skills from "@/assets/skills.json"
-import nexumLogo from "@/assets/full-logos/nexum-full.png"
-import owjsLogo from "@/assets/full-logos/owjs-full.png"
-import camLogo from "@/assets/logos/cam.png"
-import g20xspoLogo from "@/assets/full-logos/goraca20_x_spotify-full.png"
-import cloudiaLogo from "@/assets/full-logos/cloudia-full.png"
-import kaseciakLogo from "@/assets/full-logos/kaseciak-full.png"
-import tileioLogo from "@/assets/full-logos/tileio-full.png"
-import rw63Logo from "@/assets/full-logos/radiowezel63-full.png"
 
 interface ProjectsI {
   title?: string
@@ -19,33 +11,32 @@ interface ProjectsI {
 
 const projects: ProjectsI[] = [
   {
-    img: nexumLogo,
+    title: "Nexum",
     large: true,
     skills: ["NestJS", "C++", "React Native", "PostgreSQL", "Redis"],
   },
   {
     title: "My SmartHome",
-    skills: ["Custom IoT", "ESP", "Raspberry Pi", "Fusion360"],
+    skills: ["Microcontrollers", "Raspberry Pi", "Fusion360"],
   },
-  { img: owjsLogo, skills: ["TypeScript", "Node.js", "REST"] },
+  { title: "openweather.js", skills: ["TypeScript", "Node.js", "REST"] },
   {
     title: "Cards Against Morality",
-    img: camLogo,
     large: true,
     skills: ["Express", "Vue", "PostgreSQL"],
   },
-  { img: g20xspoLogo, skills: ["TypeScript", "Node.js", "REST"] },
-  { img: cloudiaLogo, skills: ["React", "Express", "SQLite"] },
-  { img: kaseciakLogo, skills: ["TypeScript", "SQLite"] },
+  { title: "Gorąca 20 x Spotify", skills: ["TypeScript", "Node.js", "REST"] },
+  { title: "Cloudia", skills: ["React", "Express", "SQLite"] },
+  { title: "Kaseciak", skills: ["TypeScript", "SQLite"] },
   {
     title: "Magnetic Robot",
     large: true,
     skills: ["Mechatronics Design", "3d Printing"],
   },
-  { img: tileioLogo, skills: ["EJS", "Node.js", "HTML", "SCSS"] },
+  { title: "Tileio", skills: ["EJS", "Node.js", "HTML", "SCSS"] },
   { title: "Hangman Dc Bot", skills: ["Python"] },
   {
-    img: rw63Logo,
+    title: "Radiowęzeł63",
     large: true,
     skills: ["EJS", "JavaScript", "Node.js", "MongoDB"],
   },

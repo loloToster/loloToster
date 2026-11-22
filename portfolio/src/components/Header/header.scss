@@ -85,6 +85,10 @@
     pointer-events: none;
     transition: all 200ms;
 
+    &__close-area {
+      height: 100%;
+    }
+
     &__inner {
       position: absolute;
       top: 0;
