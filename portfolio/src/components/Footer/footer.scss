@@ -2,15 +2,19 @@
   display: flex;
   height: 48px;
   border-top: 1px var(--border-default) solid;
-  padding: 0 23vw;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
   gap: 20px;
   font-size: 0.8rem;
   color: var(--text-secondary);
   background-color: var(--bg-primary);
   transition-property: color, background-color;
   transition-duration: 100ms;
+
+  div {
+    width: 90vw;
+    max-width: 1000px;
+  }
 
   span {
     font-style: italic;

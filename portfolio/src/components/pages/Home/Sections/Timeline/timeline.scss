@@ -1,7 +1,7 @@
 @use "sass:list";
+@use "@/styles/breakpoints.scss" as bp;
 
-$item-width: 6px;
-$dot-radius: 30%;
+$dot-radius: 3vmin;
 $color1: #10b981;
 $color2: #f59e0b;
 $color3: #0ea5e9;
@@ -9,26 +9,47 @@ $color4: #ef4444;
 
 .timeline {
   &__grid {
+    --item-width: 6px;
     display: grid;
     grid-template-columns: repeat(4, 10vmin);
     grid-template-rows: repeat(8, 10vmin);
     width: fit-content;
     margin: 32px auto;
 
+    @include bp.screen-down("lg") {
+      --item-width: 4px;
+      width: 100%;
+      padding: 0 32px;
+      grid-template-columns: repeat(4, 24px) 1fr;
+      grid-template-rows: auto;
+    }
+
     &__item {
       position: relative;
+
+      $dot-responsive-margin: 24px;
 
       &--dot {
         display: flex;
         align-items: center;
         justify-content: center;
 
+        @include bp.screen-down("lg") {
+          align-items: start;
+        }
+
         .inner {
           width: $dot-radius;
+          max-width: 20px;
           height: $dot-radius;
+          max-height: 20px;
           border-radius: 50%;
-          border: var(--color) solid $item-width;
+          border: var(--color) solid var(--item-width);
           background-color: var(--bg-primary);
+
+          @include bp.screen-down("lg") {
+            margin-top: $dot-responsive-margin;
+          }
         }
       }
 
@@ -38,10 +59,14 @@ $color4: #ef4444;
           z-index: -1;
           position: absolute;
           bottom: 0;
-          left: calc(50% - $item-width/2);
-          width: $item-width;
+          left: calc(50% - var(--item-width) / 2);
+          width: var(--item-width);
           height: 50%;
           background-color: var(--color);
+
+          @include bp.screen-down("lg") {
+            height: calc(100% - ($dot-radius / 2) - $dot-responsive-margin);
+          }
         }
       }
 
@@ -49,6 +74,10 @@ $color4: #ef4444;
         .inner:after {
           top: 0;
           bottom: unset;
+
+          @include bp.screen-down("lg") {
+            height: calc($dot-responsive-margin + ($dot-radius / 2));
+          }
         }
       }
 
@@ -59,7 +88,7 @@ $color4: #ef4444;
 
         .inner {
           background-color: var(--color);
-          width: $item-width;
+          width: var(--item-width);
           height: 100%;
         }
       }
@@ -120,18 +149,57 @@ $color4: #ef4444;
     }
   }
 
+  &__cloud-wrapper {
+    display: none;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    grid-column-end: 6;
+
+    @include bp.screen-down("lg") {
+      display: block;
+    }
+
+    &--0 {
+      grid-column-start: 2;
+      grid-row: 1 / 3;
+    }
+
+    &--1 {
+      grid-column-start: 3;
+      grid-row: 5 / 7;
+    }
+
+    &--2 {
+      grid-column-start: 4;
+      grid-row: 3 / 5;
+    }
+
+    &--3 {
+      grid-column-start: 5;
+      grid-row: 7 / 9;
+    }
+  }
+
   &__cloud {
     $arrow-size: 10px;
 
-    position: absolute;
+    position: relative;
     margin: auto;
-    width: 30vw;
-    max-width: 400px;
     padding: 10px 16px;
     border: solid 1px var(--border-default);
     border-radius: 12px;
-    left: calc(100% - $arrow-size * 1.2);
-    top: calc(50% - $arrow-size * 3);
+
+    &--floating {
+      position: absolute;
+      width: 30vw;
+      max-width: 400px;
+      left: calc(100% - $arrow-size * 1.2);
+      top: calc(50% - $arrow-size * 3);
+
+      @include bp.screen-down("lg") {
+        display: none;
+      }
+    }
 
     &::after {
       content: "";
@@ -162,7 +230,7 @@ $color4: #ef4444;
     @for $i from 1 through list.length($colors) {
       $c: list.nth($colors, $i);
 
-      &--#{$i} {
+      &--#{$i - 1} {
         --color: #{$c};
       }
     }
