@@ -1,9 +1,11 @@
 @use "sass:math";
+@use "@/styles/breakpoints.scss" as bp;
 
 .projects-page {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 60vw;
+  grid-template-columns: repeat(6, 1fr);
+  width: 90vw;
+  max-width: 1150px;
   margin: 32px auto;
   gap: 16px;
 
@@ -13,14 +15,45 @@
     border: solid 1px var(--border-default);
     border-radius: 12px;
     padding: 24px;
-    height: 40vh;
+    grid-column: span 2;
+    gap: 8px;
+
+    @include bp.screen-down("lg") {
+      grid-column: span 3;
+    }
+
+    @include bp.screen-down("md") {
+      grid-column: span 6;
+    }
+
+    &--small {
+      @include bp.screen-down("lg") {
+        grid-column: span 2;
+      }
+
+      @include bp.screen-down("md") {
+        grid-column: span 6;
+      }
+    }
 
     &--large {
-      grid-column: span 2;
+      grid-column: span 4;
+
+      @include bp.screen-down("lg") {
+        grid-column: span 6;
+      }
+
+      @include bp.screen-down("md") {
+        grid-column: span 6;
+      }
     }
 
     h1 {
       font-size: 1.5rem;
+
+      @include bp.screen-down("lg") {
+        font-size: 1.2rem;
+      }
 
       img {
         height: 2.25rem;
@@ -28,8 +61,27 @@
       }
     }
 
-    p {
+    &__desc {
       flex-grow: 1;
+
+      span.highlight {
+        font-weight: bold;
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+
+      a {
+        font-weight: 500;
+        color: var(--accent-blue);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
 
     &__skills {
@@ -44,6 +96,11 @@
       border-radius: 4px;
       color: var(--color);
       border: solid 1px var(--color);
+      font-size: 0.75rem;
+
+      @include bp.screen-down("lg") {
+        font-size: 0.6rem;
+      }
     }
   }
 }
