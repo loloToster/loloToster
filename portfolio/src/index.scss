@@ -233,6 +233,10 @@ summary {
 .light-theme {
   color-scheme: light;
 
+  --font-heading: "Plus Jakarta Sans";
+  --font-body: "Inter";
+  --font-mono: "IBM Plex Mono", monospace;
+
   --bg-primary: #ffffff;
   --bg-secondary: #f3f4f6;
   --bg-tertiary: #e5e7eb;
@@ -272,6 +276,10 @@ summary {
 .dark-theme {
   color-scheme: dark;
 
+  --font-heading: "Space Grotesk";
+  --font-body: "IBM Plex Sans";
+  --font-mono: "JetBrains Mono", monospace;
+
   --bg-primary: #000000;
   --bg-secondary: #121212;
   --bg-tertiary: #1f2937;
@@ -306,6 +314,27 @@ summary {
   --scrollbar-track: transparent;
   --scrollbar-thumb: var(--border-default);
   --scrollbar-thumb-hover: var(--accent-gray);
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--font-mono);
 }
 
 body {

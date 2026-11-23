@@ -1,6 +1,7 @@
 import "./timeline.scss"
 import { motion } from "framer-motion"
 import SectionHeading from "@/components/SectionHeading/SectionHeading"
+import ActionBtn from "@/components/ActionBtn/ActionBtn"
 
 const elements = [
   {
@@ -105,6 +106,9 @@ function Timeline() {
         <div className="timeline__cloud-wrapper timeline__cloud-wrapper--3">
           <Cloud idx={3} />
         </div>
+      </div>
+      <div className="timeline__more">
+        <ActionBtn to="/about">More About me →</ActionBtn>
       </div>
     </div>
   )

@@ -29,7 +29,7 @@
 
   &__logo {
     opacity: 0;
-    font-family: monospace;
+    font-family: var(--font-mono);
     font-size: 1.75rem;
     margin-right: auto;
     transition: all 100ms;
@@ -119,6 +119,10 @@
       align-items: center;
       font-size: 1.5rem;
       margin-bottom: 24px;
+
+      div {
+        font-family: var(--font-mono);
+      }
     }
 
     &__close {

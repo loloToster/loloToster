@@ -246,4 +246,11 @@ $color4: #ef4444;
       color: var(--text-secondary);
     }
   }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    margin-bottom: 32px;
+  }
 }

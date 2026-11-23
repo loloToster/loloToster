@@ -82,6 +82,7 @@
       justify-content: start;
       flex-direction: column;
       width: $wide-base-width;
+      min-width: 330px;
       gap: 16px;
       border: 1px solid var(--border-default);
       border-radius: 12px;

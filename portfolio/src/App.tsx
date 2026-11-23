@@ -1,7 +1,7 @@
 import "./index.scss"
 
 import { StrictMode } from "react"
-import { Outlet, useLocation } from "react-router-dom"
+import { Outlet, ScrollRestoration, useLocation } from "react-router-dom"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Helmet } from "react-helmet"
 
@@ -37,6 +37,7 @@ function App() {
                 </Helmet>
                 {location.pathname !== "/" && <Header />}
                 <Outlet />
+                <ScrollRestoration />
                 <Footer />
               </>
             )}
