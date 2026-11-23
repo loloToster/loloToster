@@ -67,6 +67,31 @@
       span.highlight {
         font-weight: bold;
       }
+
+      div {
+        display: flex;
+
+        @include bp.screen-down("md") {
+          flex-direction: column;
+        }
+      }
+
+      p {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+
+      svg {
+        width: 40%;
+        margin-left: 24px;
+
+        @include bp.screen-down("md") {
+          align-self: center;
+          width: 100%;
+          margin: 12px 0;
+          max-width: 300px;
+        }
+      }
     }
 
     &__bottom {

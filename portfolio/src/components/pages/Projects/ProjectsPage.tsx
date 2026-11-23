@@ -1,8 +1,14 @@
 import "./projects-page.scss"
 
 import skills from "@/assets/skills.json"
+
 import { useQuery } from "@tanstack/react-query"
 import { Link } from "react-router-dom"
+
+import NexumGraph from "./graphics/NexumGraph"
+import CamGraph from "./graphics/CamGraph"
+import RobotGraph from "./graphics/RobotGraph"
+import RwGraph from "./graphics/RwGraph"
 
 interface ProjectsI {
   title?: string
@@ -26,8 +32,8 @@ const projects: ProjectsI[] = [
     skills: ["NestJS", "C++", "React Native", "PostgreSQL", "Redis"],
     description: (
       <>
-        <div style={{ display: "flex" }}>
-          <p style={{ flexGrow: 1, flexBasis: 0 }}>
+        <div>
+          <p>
             Complete IoT automation platform designed to simplify the creation
             and management of custom smart home devices built with the Arduino
             framework. It bridges the gap between software and hardware,
@@ -39,6 +45,7 @@ const projects: ProjectsI[] = [
             - turning electronics tinkering into a cohesive, everyday smart
             ecosystem.
           </p>
+          <NexumGraph />
         </div>
       </>
     ),
@@ -102,16 +109,19 @@ const projects: ProjectsI[] = [
       })
 
       return (
-        <p>
-          Responsive, web-based adaptation of a popular party card game tailored
-          for dark humor and effortless multiplayer sessions. Built with a
-          strong focus on smooth, real-time gameplay and accessibility across
-          devices, it requires zero downloads to jump in. What started as a fun
-          side project now entertains a thriving community of{" "}
-          <span className="highlight">
-            {data?.users?.toLocaleString("en-US") || "over 12,000"}&nbsp;users
-          </span>
-        </p>
+        <div>
+          <p>
+            Responsive, web-based adaptation of a popular party card game
+            tailored for dark humor and effortless multiplayer sessions. Built
+            with a strong focus on smooth, real-time gameplay and accessibility
+            across devices, it requires zero downloads to jump in. What started
+            as a fun side project now entertains a thriving community of{" "}
+            <span className="highlight">
+              {data?.users?.toLocaleString("en-US") || "over 12,000"}&nbsp;users
+            </span>
+          </p>
+          <CamGraph />
+        </div>
       )
     },
     link: {
@@ -175,12 +185,24 @@ const projects: ProjectsI[] = [
   {
     title: "Magnetic Robot",
     large: true,
-    skills: ["Mechatronics Design", "3d Printing", "C++"],
-    description: <p>Work in progress...</p>,
+    skills: ["Mechatronics Design", "3D Printing", "C++"],
+    description: (
+      <div>
+        <p>
+          Built as my engineering thesis, this custom-designed robotic arm
+          combines mechanical engineering with embedded control. Modeled from
+          scratch in Fusion 360 and brought to life via 3D printing, it features
+          a microcontroller-driven architecture and an electromagnetic
+          end-effector for precise object manipulation—bridging CAD design,
+          custom electronics, and physical automation.
+        </p>
+        <RobotGraph />
+      </div>
+    ),
   },
   {
     title: "Tileio",
-    skills: ["EJS", "Node.js", "HTML", "SCSS"],
+    skills: ["EJS", "Node.js", "HTML", "SASS"],
     description: (
       <p>
         Highly customizable control panel platform for building personal
@@ -216,14 +238,17 @@ const projects: ProjectsI[] = [
     large: true,
     skills: ["EJS", "JavaScript", "Node.js", "MongoDB"],
     description: (
-      <p>
-        Mobile-first web application built for my high school's student council
-        to modernize their campus broadcasting center. It streamlines the entire
-        music request process with role-based authentication, allowing students
-        to suggest and vote on tracks while giving admins full moderation
-        control. The platform also features a dedicated playback interface for
-        seamlessly airing approved songs.
-      </p>
+      <div>
+        <p>
+          Mobile-first web application built for my high school's student
+          council to modernize their campus broadcasting center. It streamlines
+          the entire music request process with role-based authentication,
+          allowing students to suggest and vote on tracks while giving admins
+          full moderation control. The platform also features a dedicated
+          playback interface for seamlessly airing approved songs.
+        </p>
+        <RwGraph />
+      </div>
     ),
     link: {
       text: "github.com\u00A0➚",
