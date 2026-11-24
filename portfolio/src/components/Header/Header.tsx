@@ -55,7 +55,10 @@ function Header({
               </svg>
             </button>
           </div>
-          <div className="header__menu__links">
+          <div
+            className="header__menu__links"
+            onClick={() => setMenuOpen(false)}
+          >
             <Link className="header__menu__btn" to="/">
               Home &gt;
             </Link>

@@ -16,6 +16,7 @@
   &:hover {
     transform: translateY(-2px);
     border-bottom: 2px solid var(--border-default);
+    margin-bottom: -2px;
   }
 
   svg {
