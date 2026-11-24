@@ -94,10 +94,12 @@
       top: 0;
       right: 0;
       bottom: 0;
-      padding: 24px;
       background-color: var(--bg-primary);
       transform: translateX(100%);
       transition: all 200ms;
+      min-width: 70vw;
+      display: flex;
+      flex-direction: column;
     }
 
     &.open {
@@ -118,10 +120,15 @@
       justify-content: space-between;
       align-items: center;
       font-size: 1.5rem;
-      margin-bottom: 24px;
+      padding: 12px;
+      border-bottom: solid 2px var(--border-default);
 
-      div {
+      a {
         font-family: var(--font-mono);
+
+        @include bp.screen-down("md") {
+          font-size: 1.2rem;
+        }
       }
     }
 
@@ -140,14 +147,68 @@
       display: flex;
       flex-direction: column;
       align-items: end;
-      min-width: 60vw;
+    }
 
-      a {
-        font-size: 1.2rem;
-        text-align: end;
-        width: 100%;
-        padding: 12px;
-        border-bottom: solid 2px var(--border-default);
+    &__btn {
+      display: flex;
+      font-size: 1.2rem;
+      width: 100%;
+      padding: 12px;
+      border-bottom: solid 1px var(--border-default);
+      gap: 12px;
+      align-items: center;
+
+      @include bp.screen-down("md") {
+        font-size: 1rem;
+      }
+
+      &__i,
+      &__arrow {
+        font-family: var(--font-mono);
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+      }
+
+      &__i.active {
+        color: var(--text-primary);
+      }
+
+      &__name {
+        flex-grow: 1;
+      }
+    }
+
+    &__bottom {
+      margin-top: auto;
+    }
+
+    &__profiles {
+      display: flex;
+      gap: 10px;
+      padding: 16px;
+      color: var(--text-secondary);
+    }
+
+    &__theme {
+      display: flex;
+      align-items: center;
+      padding: 16px;
+      border-top: solid 2px var(--border-default);
+
+      &__left {
+        flex-grow: 1;
+      }
+
+      &__title {
+        font-size: 0.75rem;
+        font-family: var(--font-mono);
+        color: var(--text-muted);
+        margin-bottom: 4px;
+      }
+
+      &__name {
+        font-size: 1.25rem;
+        font-family: var(--font-heading);
       }
     }
   }
