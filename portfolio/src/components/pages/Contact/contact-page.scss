@@ -1,0 +1,135 @@
+@use "@/styles/breakpoints.scss" as bp;
+
+.contact-page {
+  display: flex;
+
+  @include bp.screen-down("md") {
+    flex-direction: column;
+  }
+
+  &__left {
+    border-right: solid 1px var(--border-default);
+    padding-right: 10vw;
+
+    @include bp.screen-down("lg") {
+      padding-right: 32px;
+    }
+
+    @include bp.screen-down("md") {
+      border-right: 0;
+      border-bottom: solid 1px var(--border-default);
+    }
+  }
+
+  &__links {
+    &__title {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+    }
+
+    &__btns {
+      padding-top: 8px;
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @include bp.screen-down("md") {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  a {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__right {
+    flex-grow: 1;
+    padding-left: 24px;
+    padding: 0 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include bp.screen-down("lg") {
+      padding: 0 32px;
+    }
+
+    @include bp.screen-down("md") {
+      padding: 32px 0;
+    }
+  }
+
+  &__localization {
+    display: flex;
+    align-items: end;
+    gap: 6px;
+
+    &__name {
+      font-size: 1.1rem;
+    }
+
+    &__coords {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    &__timezone {
+      flex-grow: 1;
+      text-align: end;
+      color: var(--text-secondary);
+    }
+  }
+
+  &__map {
+    width: 100%;
+
+    svg {
+      max-height: 440px;
+    }
+
+    &__pin {
+      position: absolute;
+      bottom: 33%;
+      right: 55%;
+      border: solid 1px var(--border-default);
+      border-radius: 4px;
+      padding: 6px 10px;
+      background-color: var(--bg-primary);
+      font-family: var(--font-mono);
+
+      @include bp.screen-down("lg") {
+        font-size: 0.6rem;
+      }
+
+      &::after {
+        $arrow-size: 10px;
+
+        content: "";
+        position: absolute;
+        right: 12px;
+        bottom: -0.6 * $arrow-size;
+        border: inherit;
+        border-width: 0 1px 1px 0;
+        width: $arrow-size;
+        height: $arrow-size;
+        transform: rotate(45deg);
+        background-color: var(--bg-primary);
+      }
+    }
+  }
+
+  &__time {
+    align-self: flex-end;
+    font-size: 0.8rem;
+
+    span {
+      color: var(--text-secondary);
+    }
+  }
+}

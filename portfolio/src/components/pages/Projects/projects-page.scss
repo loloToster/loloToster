@@ -2,44 +2,6 @@
 @use "@/styles/breakpoints.scss" as bp;
 
 .projects-page {
-  width: 90vw;
-  max-width: 1150px;
-  margin: 32px auto;
-
-  &__top {
-    margin: 7vh 0;
-
-    div {
-      color: var(--text-muted);
-      font-family: var(--font-mono);
-      margin-bottom: 4px;
-      font-size: 0.7rem;
-
-      @include bp.screen-down("lg") {
-        font-size: 0.6rem;
-      }
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-
-      @include bp.screen-down("lg") {
-        font-size: 2rem;
-      }
-    }
-
-    p {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      max-width: 700px;
-
-      @include bp.screen-down("lg") {
-        font-size: 1rem;
-      }
-    }
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);

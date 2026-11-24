@@ -5,6 +5,8 @@ import skills from "@/assets/skills.json"
 import { useQuery } from "@tanstack/react-query"
 import { Link } from "react-router-dom"
 
+import PageBase from "@/components/PageBase/PageBase"
+
 import NexumGraph from "./graphics/NexumGraph"
 import CamGraph from "./graphics/CamGraph"
 import RobotGraph from "./graphics/RobotGraph"
@@ -274,64 +276,63 @@ function getSkillColor(skillName: string) {
 
 function ProjectsPage() {
   return (
-    <div className="projects-page">
-      <div className="projects-page__top">
-        <div>~/projects - [100% SOLO-BUILT]</div>
-        <h1>My projects</h1>
-        <p>
-          A curated look at the things I've made. Every piece of code, circuit,
-          and deployment here was designed and implemented entirely by me.
-          Turning ideas into fully functional, hands-on solutions.
-        </p>
-      </div>
-      <div className="projects-page__list">
-        {projects.map((project, i) => (
-          <div
-            className={
-              "projects-page__item" +
-              (project.large ? " projects-page__item--large" : "") +
-              (project.small ? " projects-page__item--small" : "")
-            }
-            key={i}
-          >
-            <h2>
-              {project.img && <img src={project.img} />} {project.title}
-            </h2>
-            {project.description && (
-              <div className="projects-page__item__desc">
-                {project.description}
-              </div>
-            )}
-            {project.DynamicDescription && (
-              <div className="projects-page__item__desc">
-                <project.DynamicDescription />
-              </div>
-            )}
-            <div className="projects-page__item__bottom">
-              <div className="projects-page__item__skills">
-                {project.skills &&
-                  project.skills.map((s, i) => (
-                    <div
-                      className="projects-page__item__skill"
-                      key={i}
-                      style={
-                        { "--color": getSkillColor(s) } as React.CSSProperties
-                      }
-                    >
-                      {s}
-                    </div>
-                  ))}
-              </div>
-              {project.link && (
-                <Link to={project.link.href} target={project.link.target}>
-                  {project.link.text}
-                </Link>
+    <PageBase
+      accentText="~/projects - [100% SOLO-BUILT]"
+      headerText="My projects"
+      descText="A curated look at the things I've made. Every piece of code,
+            circuit, and deployment here was designed and implemented entirely
+            by me. Turning ideas into fully functional, hands-on solutions."
+    >
+      <div className="projects-page">
+        <div className="projects-page__list">
+          {projects.map((project, i) => (
+            <div
+              className={
+                "projects-page__item" +
+                (project.large ? " projects-page__item--large" : "") +
+                (project.small ? " projects-page__item--small" : "")
+              }
+              key={i}
+            >
+              <h2>
+                {project.img && <img src={project.img} />} {project.title}
+              </h2>
+              {project.description && (
+                <div className="projects-page__item__desc">
+                  {project.description}
+                </div>
               )}
+              {project.DynamicDescription && (
+                <div className="projects-page__item__desc">
+                  <project.DynamicDescription />
+                </div>
+              )}
+              <div className="projects-page__item__bottom">
+                <div className="projects-page__item__skills">
+                  {project.skills &&
+                    project.skills.map((s, i) => (
+                      <div
+                        className="projects-page__item__skill"
+                        key={i}
+                        style={
+                          { "--color": getSkillColor(s) } as React.CSSProperties
+                        }
+                      >
+                        {s}
+                      </div>
+                    ))}
+                </div>
+                {project.link && (
+                  <Link to={project.link.href} target={project.link.target}>
+                    {project.link.text}
+                  </Link>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </PageBase>
   )
 }
 
