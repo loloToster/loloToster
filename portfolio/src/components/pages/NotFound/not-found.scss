@@ -28,6 +28,7 @@
 
     h1 {
       font-size: 17vh;
+      color: var(--text-themed-header);
 
       @include bp.screen-down("lg") {
         font-size: 12vh;
@@ -47,8 +48,4 @@
       }
     }
   }
-}
-
-.light-theme .not-found h1 {
-  color: var(--accent-blue);
 }

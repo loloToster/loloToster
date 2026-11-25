@@ -6,6 +6,8 @@ import leonImage from "@/assets/leon.jpg"
 import { useTheme } from "@/contexts/theme/useTheme"
 import { useThemedGlitch } from "@/hooks/useThemedGlitch"
 
+import ScrollIndicator from "./ScrollIndicator"
+
 function Landing() {
   const { dark } = useTheme()
   const { ref: glitchRef } = useThemedGlitch({ timing: { duration: 6000 } })
@@ -31,6 +33,9 @@ function Landing() {
           systems. I enjoy developing robust apps and open-source tools, while
           also tinkering with electronics, robotics, and IoT.
         </p>
+      </div>
+      <div className="landing__scroll">
+        <ScrollIndicator />
       </div>
     </div>
   )

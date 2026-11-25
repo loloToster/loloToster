@@ -1,6 +1,7 @@
 @use "@/styles/breakpoints" as bp;
 
 .landing {
+  position: relative;
   display: flex;
   padding: 0 23vw;
   height: calc(70vh - 64px);
@@ -86,6 +87,34 @@
 
       @include bp.screen-down("md") {
         font-size: 1rem;
+      }
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--border-strong);
+
+    svg {
+      width: 48px;
+      height: 48px;
+    }
+
+    .mobile {
+      display: none;
+      margin-bottom: 12px;
+    }
+
+    @media (pointer: none), (pointer: coarse) {
+      .desktop {
+        display: none;
+      }
+
+      .mobile {
+        display: block;
       }
     }
   }

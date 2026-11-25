@@ -96,7 +96,10 @@ function Header({
               <Link to="https://github.com/loloToster" target="_blank">
                 github ➚
               </Link>
-              <Link to="" target="_blank">
+              <Link
+                to="https://www.linkedin.com/in/leon-mazurowski-014ba2451/"
+                target="_blank"
+              >
                 linkedin ➚
               </Link>
             </div>

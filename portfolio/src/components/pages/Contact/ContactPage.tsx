@@ -81,7 +81,10 @@ function ContactPage() {
                 </svg>
                 <span>StackOverflow</span>
               </ActionBtn>
-              <ActionBtn to="" target="_blank">
+              <ActionBtn
+                to="https://www.linkedin.com/in/leon-mazurowski-014ba2451/"
+                target="_blank"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   version="1.1"

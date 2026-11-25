@@ -247,6 +247,8 @@ summary {
   --text-muted: #9ca3af;
   --text-inverse: #ffffff;
 
+  --text-themed-header: var(--accent-blue);
+
   --border-subtle: #f3f4f6;
   --border-default: #e5e7eb;
   --border-strong: #d1d5db;
@@ -289,6 +291,8 @@ summary {
   --text-secondary: #b3bac6;
   --text-muted: #6b7280;
   --text-inverse: #000000;
+
+  --text-themed-header: var(--text-primary);
 
   --border-subtle: #1f2937;
   --border-default: #374151;
