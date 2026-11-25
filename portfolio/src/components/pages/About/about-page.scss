@@ -1,0 +1,48 @@
+@use "sass:math";
+@use "@/styles/breakpoints.scss" as bp;
+
+.about-page {
+  .exp {
+    $el-padding: 32px;
+
+    display: grid;
+
+    &__title {
+      text-align: end;
+      padding-right: $el-padding;
+
+      @include bp.screen-down("lg") {
+        text-align: start;
+        padding: 0;
+        padding-bottom: math.div($el-padding, 2);
+
+        br {
+          display: none;
+        }
+      }
+
+      &__name {
+        font-size: 1.3rem;
+      }
+
+      &__time {
+        color: var(--text-secondary);
+      }
+    }
+
+    &__desc {
+      grid-column: 2 / 3;
+      flex-basis: 0;
+      flex-grow: 1;
+      border-left: 1px solid var(--border-subtle);
+      padding-left: $el-padding;
+      padding-bottom: $el-padding;
+
+      @include bp.screen-down("lg") {
+        grid-column: 1 / 2;
+        padding-bottom: 0;
+        margin-bottom: $el-padding;
+      }
+    }
+  }
+}

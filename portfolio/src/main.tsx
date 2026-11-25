@@ -3,6 +3,7 @@ import { ViteReactSSG, type RouteRecord } from "vite-react-ssg"
 import App from "@/App"
 import Home from "@/components/pages/Home/Home"
 import ProjectsPage from "@/components/pages/Projects/ProjectsPage"
+import AboutPage from "@/components/pages/About/AboutPage"
 import ContactPage from "@/components/pages/Contact/ContactPage"
 import NotFound from "@/components/pages/NotFound/NotFound"
 
@@ -18,6 +19,10 @@ export const routes: RouteRecord[] = [
       {
         path: "/projects",
         element: <ProjectsPage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
       },
       {
         path: "/contact",
